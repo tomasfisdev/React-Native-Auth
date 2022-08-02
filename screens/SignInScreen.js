@@ -54,6 +54,7 @@ const SignInScreen = ({ navigation }) => {
         <Text style={styles.formSubHeader}>Ingresa tus datos</Text>
         <View style={styles.formInputsContainer}>
           <Input
+            autoCapitalize="none"
             marginTop={15}
             onChangeText={(text) => handleOnchange(text, "email")}
             onFocus={() => handleError(null, "email")}
@@ -70,35 +71,12 @@ const SignInScreen = ({ navigation }) => {
             error={errors.password}
             password
           />
-
           <Button
             marginTop={20}
             backgroundColor={COLORS.blue}
             fontColor={COLORS.white}
             title="Iniciar sesión"
             onPress={validate}
-          />
-        </View>
-        <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")}>
-          <Text style={styles.formForgotPassword}>
-            ¿Olvidaste tu contraseña?
-          </Text>
-        </TouchableOpacity>
-        <Text style={styles.formContinueWithText}>O continuar con</Text>
-        <View style={styles.formAuthServicesContainer}>
-          <Button
-            marginTop={15}
-            backgroundColor={COLORS.light}
-            fontColor={COLORS.blue}
-            title="Teléfono"
-            iconName="phone"
-          />
-          <Button
-            marginTop={15}
-            backgroundColor={COLORS.light}
-            fontColor={COLORS.blue}
-            title="Google"
-            iconName="google"
           />
         </View>
         <View style={styles.formBottomTextContainer}>

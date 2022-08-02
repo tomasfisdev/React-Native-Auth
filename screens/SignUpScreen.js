@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   View,
   Text,
@@ -51,6 +50,7 @@ const SignUpScreen = ({ navigation }) => {
         <Text style={styles.formSubHeader}>Ingresa tus datos</Text>
         <View style={styles.formInputsContainer}>
           <Input
+            autoCapitalize="none"
             marginTop={15}
             onChangeText={(text) => handleOnchange(text, "email")}
             onFocus={() => handleError(null, "email")}
@@ -73,23 +73,6 @@ const SignUpScreen = ({ navigation }) => {
             fontColor={COLORS.white}
             title="Registrarse"
             onPress={validate}
-          />
-        </View>
-        <Text style={styles.formContinueWithText}>O continuar con</Text>
-        <View style={styles.formAuthServicesContainer}>
-          <Button
-            marginTop={15}
-            backgroundColor={COLORS.light}
-            fontColor={COLORS.blue}
-            title="Teléfono"
-            iconName="phone"
-          />
-          <Button
-            marginTop={15}
-            backgroundColor={COLORS.light}
-            fontColor={COLORS.blue}
-            title="Google"
-            iconName="google"
           />
         </View>
         <View style={styles.formBottomTextContainer}>

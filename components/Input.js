@@ -3,6 +3,7 @@ import { View, Text, TextInput, StyleSheet } from "react-native";
 import COLORS from "../utils/generalStyles";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 const Input = ({
+  autoCapitalize,
   iconName,
   error,
   password,
@@ -42,6 +43,7 @@ const Input = ({
       >
         <Icon name={iconName} style={styles.inputIcon} />
         <TextInput
+          autoCapitalize={autoCapitalize}
           autoCorrect={false}
           onFocus={() => {
             onFocus();
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
   inputIcon: {
     color: COLORS.darkBlue,
     fontSize: 22,
-    padding:15
+    padding: 15,
   },
 });
 

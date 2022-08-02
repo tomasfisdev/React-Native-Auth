@@ -54,14 +54,16 @@ const AuthProvider = ({ children }) => {
       })
       .catch((error) => {
         console.log(error);
-        //cambiar a "el email o la contraseña son incorrectas",
-        //para no dar info de que la cuenta existe
         if (error.code === "auth/wrong-password") {
-          Alert.alert("Contraseña incorrecta");
+          Alert.alert("El email o la contraseña son incorrectas");
         }
         if (error.code === "auth/invalid-email") {
-          Alert.alert("El email no es valido");
+          Alert.alert("El email o la contraseña son incorrectas");
         }
+        if (error.code === "auth/user-not-found") {
+          Alert.alert("El email o la contraseña son incorrectas");
+        }
+       
       });
   };
   const SignUp = async (email, password) => {
